@@ -187,7 +187,7 @@ jobs:
   linux-wheels:
     runs-on: "ubuntu-20.04"
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         arch: ["x86_64", "aarch64"]
     steps:
