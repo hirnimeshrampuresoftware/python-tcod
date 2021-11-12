@@ -210,7 +210,7 @@ jobs:
         run: |
           python -m cibuildwheel --output-dir wheelhouse
         env:
-          CIBW_BUILD: cp36-cp36* cp37-cp37* cp38-cp38* cp39-cp39*
+          CIBW_BUILD: cp36-* cp37-* cp38-* cp39-*
           CIBW_ARCHS_LINUX: ${{ matrix.arch }}
           CIBW_MANYLINUX_*_IMAGE: manylinux2014
           CIBW_MANYLINUX_PYPY_X86_64_IMAGE: manylinux2014
