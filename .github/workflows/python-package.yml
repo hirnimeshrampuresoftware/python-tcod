@@ -214,7 +214,10 @@ jobs:
           CIBW_ARCHS_LINUX: ${{ matrix.arch }}
           CIBW_MANYLINUX_*_IMAGE: manylinux2014
           CIBW_MANYLINUX_PYPY_X86_64_IMAGE: manylinux2014
-          CIBW_BEFORE_ALL_LINUX: yum install -y SDL2-devel
+          CIBW_BEFORE_ALL_LINUX: >
+            yum install -y epel-release &&
+            yum-config-manager --enable epel &&
+            yum install -y SDL2-devel
           CIBW_BEFORE_TEST: pip install numpy
           CIBW_TEST_COMMAND: python -c "import tcod"
       - name: Archive wheel
